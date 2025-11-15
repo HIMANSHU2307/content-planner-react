@@ -1,7 +1,7 @@
 {
   "name": "content-planner-react",
   "version": "1.0.0",
-  "description": "Content Planner - A senior-level React/Next.js application with RTK Query",
+  "description": "Content Planner - A React/Next.js application with RTK Query",
   "private": true,
   "scripts": {
     "dev": "next dev",

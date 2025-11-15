@@ -408,7 +408,7 @@ The application includes error handling at multiple levels:
 
 This application demonstrates:
 
-1. **Senior-level Architecture**
+1. **Architecture**
    - Atomic design pattern
    - Separation of concerns
    - Scalable structure
@@ -446,7 +446,7 @@ This project is created for demonstration purposes.
 
 ## 👨‍💻 Author
 
-Built as a portfolio project to demonstrate senior frontend development skills.
+Built as a portfolio project By Himanshu Sharma.
 
 ---
 

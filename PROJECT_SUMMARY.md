@@ -2,7 +2,7 @@
 
 ## What Was Built
 
-A complete, production-ready content planning and scheduling application demonstrating senior-level frontend development skills. The application is built with modern React/Next.js patterns, comprehensive state management, and a clean, maintainable architecture.
+A complete, production-ready content planning and scheduling application demonstrating frontend development skills. The application is built with modern React/Next.js patterns, comprehensive state management, and a clean, maintainable architecture.
 
 ## Key Features Implemented
 
@@ -150,7 +150,7 @@ content-planner-react/
 
 ## What This Demonstrates
 
-### Senior-Level Skills
+### Skills
 
 1. **Architecture**
    - Scalable project structure
