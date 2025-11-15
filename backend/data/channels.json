@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Instagram",
+    "type": "social",
+    "color": "#E4405F"
+  },
+  {
+    "id": "2",
+    "name": "Twitter",
+    "type": "social",
+    "color": "#1DA1F2"
+  },
+  {
+    "id": "3",
+    "name": "LinkedIn",
+    "type": "professional",
+    "color": "#0077B5"
+  },
+  {
+    "id": "4",
+    "name": "Blog",
+    "type": "content",
+    "color": "#FF6B6B"
+  }
+]

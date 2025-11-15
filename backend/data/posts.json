@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "Welcome to Content Planner",
+    "content": "This is your first post. Start planning your content!",
+    "status": "draft",
+    "channelIds": [
+      "1",
+      "4"
+    ],
+    "campaignId": "1",
+    "publishDate": "2025-11-16T17:24:05.890Z",
+    "createdAt": "2025-11-15T17:24:05.891Z",
+    "updatedAt": "2025-11-15T22:07:23.101Z"
+  }
+]
