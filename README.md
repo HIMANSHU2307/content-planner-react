@@ -18,37 +18,49 @@ A content planning and scheduling application built with React, Next.js, and RTK
 
 ```
 content-planner-react/
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx         # Root layout with providers
-│   ├── page.tsx           # Main application page
-│   ├── providers.tsx      # Redux provider wrapper
-│   └── globals.scss       # Global styles
-├── backend/                # Node.js Express backend
-│   ├── server.js          # Express server with CRUD endpoints
-│   ├── data/              # JSON file storage
-│   └── package.json       # Backend dependencies
-├── components/            # Atomic design components
-│   ├── atoms/            # Basic building blocks
-│   │   ├── Button/
-│   │   ├── Input/
-│   │   ├── Textarea/
-│   │   ├── Select/
-│   │   └── Badge/
-│   ├── molecules/        # Composed components
-│   │   ├── PostCard/
-│   │   └── PostForm/
-│   └── organisms/        # Complex components
-│       ├── SummaryWidget/
-│       ├── SearchBar/
-│       ├── ViewSwitcher/
-│       ├── CalendarView/
-│       └── ListView/
-├── store/                # Redux store configuration
-│   ├── store.ts          # Store setup
-│   ├── apiSlice.ts      # RTK Query API slice
-│   └── hooks.ts         # Typed Redux hooks
-└── types/               # TypeScript type definitions
-    └── index.ts        # Centralized types
+├── frontend/              # Frontend application
+│   ├── app/              # Next.js App Router
+│   │   ├── _components/  # Shared app components
+│   │   │   └── providers.tsx
+│   │   ├── (dashboard)/  # Dashboard route group
+│   │   │   ├── layout.tsx
+│   │   │   └── dashboard/
+│   │   │       ├── page.tsx
+│   │   │       └── page.module.scss
+│   │   ├── layout.tsx    # Root layout
+│   │   ├── page.tsx      # Home redirect
+│   │   └── globals.scss  # Global styles
+│   ├── components/       # Atomic design components
+│   │   ├── atoms/        # Basic building blocks
+│   │   │   ├── Button/
+│   │   │   ├── Input/
+│   │   │   ├── Textarea/
+│   │   │   ├── Select/
+│   │   │   └── Badge/
+│   │   ├── molecules/    # Composed components
+│   │   │   ├── PostCard/
+│   │   │   └── PostForm/
+│   │   └── organisms/    # Complex components
+│   │       ├── SummaryWidget/
+│   │       ├── SearchBar/
+│   │       ├── ViewSwitcher/
+│   │       ├── CalendarView/
+│   │       └── ListView/
+│   ├── store/            # Redux store configuration
+│   │   ├── apis/         # RTK Query API slices
+│   │   ├── baseApi.ts    # Base API configuration
+│   │   ├── store.ts      # Store setup
+│   │   └── hooks.ts     # Typed Redux hooks
+│   ├── types/            # TypeScript type definitions
+│   ├── package.json      # Frontend dependencies
+│   └── tsconfig.json     # TypeScript configuration
+├── backend/              # Node.js Express backend
+│   ├── server.js         # Express server with CRUD endpoints
+│   ├── routes/           # API route handlers
+│   ├── data/             # JSON file storage
+│   ├── utils/            # Backend utilities
+│   └── package.json      # Backend dependencies
+└── package.json         # Root-level convenience scripts
 ```
 
 ## 🛠️ Technology Stack
@@ -74,28 +86,29 @@ content-planner-react/
 
 ### Setup
 
-1. **Install frontend dependencies:**
+1. **Install all dependencies:**
 ```bash
-cd content-planner-react
-npm install
+# From project root - installs both frontend and backend
+npm run install:all
+
+# Or install separately:
+cd frontend && npm install
+cd ../backend && npm install
 ```
 
-2. **Install backend dependencies:**
+2. **Start the backend server:**
 ```bash
-cd backend
-npm install
-```
-
-3. **Start the backend server:**
-```bash
-npm start
+# From project root
+npm run backend
+# Or: cd backend && npm start
 # Server runs on http://localhost:3001
 ```
 
-4. **Start the frontend development server:**
+3. **Start the frontend development server:**
 ```bash
 # From project root
 npm run dev
+# Or: cd frontend && npm run dev
 # Application runs on http://localhost:3000
 ```
 
@@ -127,7 +140,7 @@ The application follows atomic design principles:
 
 The application uses **Redux Toolkit** with **RTK Query** for state management:
 
-- **API Slice** (`store/apiSlice.ts`): Centralized API configuration
+- **API Slices** (`store/apis/`): Centralized API configuration
   - Automatic caching with configurable cache times
   - Tag-based cache invalidation
   - Optimistic updates for better UX
@@ -179,7 +192,7 @@ The application uses **Redux Toolkit** with **RTK Query** for state management:
 ### Atoms
 
 #### Button
-**Location**: `components/atoms/Button/Button.tsx`
+**Location**: `frontend/components/atoms/Button/Button.tsx`
 
 A versatile button component with multiple variants and sizes.
 
@@ -197,7 +210,7 @@ A versatile button component with multiple variants and sizes.
 ```
 
 #### Input
-**Location**: `components/atoms/Input/Input.tsx`
+**Location**: `frontend/components/atoms/Input/Input.tsx`
 
 Form input with label, error, and helper text support.
 
@@ -221,7 +234,7 @@ Form input with label, error, and helper text support.
 ### Molecules
 
 #### PostCard
-**Location**: `components/molecules/PostCard/PostCard.tsx`
+**Location**: `frontend/components/molecules/PostCard/PostCard.tsx`
 
 Displays a post in a card format with status, channels, and actions.
 
@@ -232,7 +245,7 @@ Displays a post in a card format with status, channels, and actions.
 - `onDelete`: (postId: string) => void (optional)
 
 #### PostForm
-**Location**: `components/molecules/PostForm/PostForm.tsx`
+**Location**: `frontend/components/molecules/PostForm/PostForm.tsx`
 
 Complete form for creating and editing posts with validation.
 
@@ -247,7 +260,7 @@ Complete form for creating and editing posts with validation.
 ### Organisms
 
 #### SummaryWidget
-**Location**: `components/organisms/SummaryWidget/SummaryWidget.tsx`
+**Location**: `frontend/components/organisms/SummaryWidget/SummaryWidget.tsx`
 
 Displays key statistics about content planning.
 
@@ -262,7 +275,7 @@ Displays key statistics about content planning.
 - Channel distribution
 
 #### SearchBar
-**Location**: `components/organisms/SearchBar/SearchBar.tsx`
+**Location**: `frontend/components/organisms/SearchBar/SearchBar.tsx`
 
 Provides search and filter functionality.
 
@@ -277,7 +290,7 @@ Provides search and filter functionality.
 - `onClearFilters`: () => void
 
 #### CalendarView
-**Location**: `components/organisms/CalendarView/CalendarView.tsx`
+**Location**: `frontend/components/organisms/CalendarView/CalendarView.tsx`
 
 Displays posts grouped by date in a calendar format.
 
@@ -288,7 +301,7 @@ Displays posts grouped by date in a calendar format.
 - `onDelete`: (postId: string) => void (optional)
 
 #### ListView
-**Location**: `components/organisms/ListView/ListView.tsx`
+**Location**: `frontend/components/organisms/ListView/ListView.tsx`
 
 Displays posts in a responsive grid layout.
 
@@ -342,7 +355,7 @@ The application includes RTL (Right-to-Left) support for languages like Arabic a
 - Layout adjustments for RTL direction
 - Text alignment and flex direction reversals
 
-To enable RTL, set `dir="rtl"` on the HTML element in `app/layout.tsx`.
+To enable RTL, set `dir="rtl"` on the HTML element in `frontend/app/layout.tsx`.
 
 ## 🚧 Future Improvements
 

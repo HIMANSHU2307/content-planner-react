@@ -35,40 +35,50 @@ A complete, production-ready content planning and scheduling application demonst
 
 ```
 content-planner-react/
-├── app/                          # Next.js App Router
-│   ├── layout.tsx               # Root layout with providers
-│   ├── page.tsx                 # Main application page
-│   ├── providers.tsx           # Redux provider
-│   └── globals.scss             # Global styles
+├── frontend/                    # Frontend application
+│   ├── app/                    # Next.js App Router
+│   │   ├── _components/       # Shared app components
+│   │   │   └── providers.tsx
+│   │   ├── (dashboard)/       # Dashboard route group
+│   │   │   ├── layout.tsx
+│   │   │   └── dashboard/
+│   │   │       ├── page.tsx
+│   │   │       └── page.module.scss
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Home redirect
+│   │   └── globals.scss       # Global styles
+│   │
+│   ├── components/             # Atomic design components
+│   │   ├── atoms/             # Basic building blocks
+│   │   │   ├── Button/
+│   │   │   ├── Input/
+│   │   │   ├── Textarea/
+│   │   │   ├── Select/
+│   │   │   └── Badge/
+│   │   ├── molecules/         # Composed components
+│   │   │   ├── PostCard/
+│   │   │   └── PostForm/
+│   │   └── organisms/         # Complex components
+│   │       ├── SummaryWidget/
+│   │       ├── SearchBar/
+│   │       ├── ViewSwitcher/
+│   │       ├── CalendarView/
+│   │       └── ListView/
+│   │
+│   ├── store/                 # Redux store
+│   │   ├── apis/              # RTK Query API slices
+│   │   ├── baseApi.ts         # Base API configuration
+│   │   ├── store.ts           # Store configuration
+│   │   └── hooks.ts           # Typed Redux hooks
+│   │
+│   └── types/                 # TypeScript definitions
+│       └── index.ts          # All type definitions
 │
-├── components/                   # Atomic design components
-│   ├── atoms/                   # Basic building blocks
-│   │   ├── Button/
-│   │   ├── Input/
-│   │   ├── Textarea/
-│   │   ├── Select/
-│   │   └── Badge/
-│   ├── molecules/              # Composed components
-│   │   ├── PostCard/
-│   │   └── PostForm/
-│   └── organisms/              # Complex components
-│       ├── SummaryWidget/
-│       ├── SearchBar/
-│       ├── ViewSwitcher/
-│       ├── CalendarView/
-│       └── ListView/
-│
-├── store/                       # Redux store
-│   ├── store.ts                 # Store configuration
-│   ├── apiSlice.ts             # RTK Query API slice
-│   └── hooks.ts                # Typed Redux hooks
-│
-├── types/                       # TypeScript definitions
-│   └── index.ts                # All type definitions
-│
-└── backend/                     # Node.js backend
-    ├── server.js                # Express server
-    └── data/                    # JSON file storage
+└── backend/                   # Node.js backend
+    ├── server.js              # Express server
+    ├── routes/                # API route handlers
+    ├── data/                  # JSON file storage
+    └── utils/                 # Backend utilities
 ```
 
 ## Component Count

@@ -1,0 +1,30 @@
+{
+  "name": "content-planner-react",
+  "version": "1.0.0",
+  "description": "Content Planner - A React/Next.js application with RTK Query",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "backend": "node ../backend/server.js"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "date-fns": "^3.6.0",
+    "next": "^15.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.0.0"
+  }
+}

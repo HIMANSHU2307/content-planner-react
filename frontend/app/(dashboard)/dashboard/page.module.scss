@@ -1,0 +1,85 @@
+/**
+ * Main Page Styles
+ */
+
+.main {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.main__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.header__title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  font-family: var(--font-script), 'Playfair Display', 'Cormorant Garamond', serif;
+  margin: 0;
+  letter-spacing: 0.03em;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-primary-light),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-muted);
+  font-size: 1.125rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.content__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postsSection {
+  min-height: 400px;
+}
+
+[dir='rtl'] .header__top {
+  flex-direction: row-reverse;
+}
+
+[dir='rtl'] .header__actions {
+  flex-direction: row-reverse;
+}
+
+[dir='rtl'] .formPanel__header {
+  flex-direction: row-reverse;
+}
+

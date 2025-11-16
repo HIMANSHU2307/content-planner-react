@@ -11,22 +11,32 @@ Get the Content Planner application up and running in minutes!
 
 ### 1. Install Dependencies
 
-**Frontend:**
+**Option 1: Install all at once (recommended):**
 ```bash
-cd content-planner-react
-npm install
+npm run install:all
 ```
 
-**Backend:**
+**Option 2: Install separately:**
 ```bash
-cd backend
+# Frontend
+cd frontend
+npm install
+
+# Backend
+cd ../backend
 npm install
 ```
 
 ### 2. Start the Backend Server
 
-From the `backend` directory:
+From the project root:
 ```bash
+npm run backend
+```
+
+Or from the `backend` directory:
+```bash
+cd backend
 npm start
 ```
 
@@ -40,8 +50,14 @@ The backend will start on `http://localhost:3001`
 
 ### 3. Start the Frontend
 
-From the project root (`content-planner-react`):
+From the project root:
 ```bash
+npm run dev
+```
+
+Or from the `frontend` directory:
+```bash
+cd frontend
 npm run dev
 ```
 
@@ -68,13 +84,13 @@ Navigate to `http://localhost:3000` in your browser.
 
 ### Frontend won't start
 - Check if port 3000 is available
-- Ensure all dependencies are installed: `npm install`
-- Check for TypeScript errors: `npm run build`
+- Ensure all dependencies are installed: `cd frontend && npm install`
+- Check for TypeScript errors: `cd frontend && npm run build`
 
 ### API calls failing
 - Ensure backend is running on port 3001
 - Check browser console for CORS errors
-- Verify API URL in `store/apiSlice.ts`
+- Verify API URL in `frontend/store/apis/`
 
 ### No data showing
 - Check backend data files in `backend/data/`
@@ -97,10 +113,11 @@ Navigate to `http://localhost:3000` in your browser.
 
 ```
 content-planner-react/
-├── app/              # Next.js pages
-├── components/       # React components (atomic design)
-├── store/           # Redux store and RTK Query
-├── types/           # TypeScript definitions
+├── frontend/        # Frontend application
+│   ├── app/         # Next.js App Router
+│   ├── components/  # React components (atomic design)
+│   ├── store/       # Redux store and RTK Query
+│   └── types/       # TypeScript definitions
 └── backend/         # Node.js Express server
 ```
 

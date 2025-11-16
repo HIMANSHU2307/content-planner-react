@@ -36,7 +36,7 @@ The Content Planner application is built using a modern, scalable architecture t
 The application follows **Atomic Design** principles:
 
 ```
-Page (app/page.tsx)
+Page (frontend/app/(dashboard)/dashboard/page.tsx)
 │
 ├── Organisms (Complex UI)
 │   ├── SummaryWidget
